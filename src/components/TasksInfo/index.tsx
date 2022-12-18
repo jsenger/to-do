@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 export function TasksInfo() {
   return (
-    <section className={styles.tasksInfo}>
+    <section className={styles.container}>
       <span className={styles.createdTasks}>
         Created tasks<span>0</span>
       </span>
