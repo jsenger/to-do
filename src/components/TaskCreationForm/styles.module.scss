@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  gap: 8px;
+
+  & > input {
+    flex: 1;
+    padding: 1rem;
+    color: var(--gray-100);
+    background: var(--gray-600);
+    border: 1px solid var(--gray-800);
+    border-radius: 8px;
+    
+    &::placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder {
+      color: var(--gray-300);
+    }
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  & > button {
+    padding: 1rem;
+    background: var(--blue-700);
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
