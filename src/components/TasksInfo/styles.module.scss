@@ -1,0 +1,29 @@
+.tasksInfo {
+  margin-top: 4rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > span {
+    font-weight: bold;
+    font-size: 0.875rem;
+
+    &.createdTasks {
+      color: var(--blue-300);
+    }
+
+    &.completedTasks {
+      color: var(--purple-300);
+    }
+
+    & > span {
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--gray-100);
+      background: var(--gray-500);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+  }
+}
