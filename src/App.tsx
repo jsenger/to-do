@@ -11,6 +11,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 function App() {
   const [tasks, setTasks] = useState([] as TaskInterface[])
+  const completedTasks = tasks.filter(task => task.isComplete)
 
   function onAddNewTask(newTask: string) {
     setTasks([
@@ -38,6 +39,7 @@ function App() {
         <TaskCreationForm onAddNewTask={onAddNewTask} />
         <TasksInfo
           createdTasks={tasks.length}
+          completedTasks={completedTasks.length}
         />
         {tasks.length === 0 ? (
           <EmptyTaskList />

@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 
-export function TasksInfo({createdTasks}: TasksInfo.Props) {
+export function TasksInfo({createdTasks, completedTasks}: TasksInfo.Props) {
   return (
     <section className={styles.container}>
       <span className={styles.createdTasks}>
@@ -9,7 +9,7 @@ export function TasksInfo({createdTasks}: TasksInfo.Props) {
 
       <span className={styles.completedTasks}>
         Completed
-        <span>1 de 3</span>
+        <span>{completedTasks} of {createdTasks}</span>
       </span>
     </section>
   )
@@ -18,5 +18,6 @@ export function TasksInfo({createdTasks}: TasksInfo.Props) {
 namespace TasksInfo {
   export interface Props {
     createdTasks: number
+    completedTasks: number
   }
 }
