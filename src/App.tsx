@@ -20,6 +20,10 @@ function App() {
     }])
   }
 
+  function onDeleteTask(taskId: string) {
+    setTasks(tasks.filter(task => task.id !== taskId))
+  }
+
   return (
     <>
       <Header />
@@ -29,7 +33,11 @@ function App() {
         {tasks.length === 0 ? (
           <EmptyTaskList />
         ) : tasks.map(task => (
-          <Task key={task.id} task={task} />
+          <Task 
+            key={task.id} 
+            task={task}
+            onDeleteTask={onDeleteTask}
+          />
         ))}
       </main>
     </>
