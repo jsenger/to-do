@@ -5,8 +5,8 @@ export function EmptyTaskList() {
   return (
     <div className={styles.container}>
       <img src={clipboard} alt="Clipboard icon" />
-      <p>Você ainda não tem tarefas cadastradas</p>
-      <p>Crie tarefas e organize seus itens a fazer</p>
+      <p>You don't have any tasks yet</p>
+      <p>Add new tasks and organize your to-do items</p>
     </div>
   )
 }
