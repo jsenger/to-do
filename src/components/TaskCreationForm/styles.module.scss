@@ -4,6 +4,7 @@
 
   & > input {
     flex: 1;
+    min-width: 0;
     padding: 1rem;
     color: var(--gray-100);
     background: var(--gray-600);
