@@ -1,10 +1,10 @@
 import styles from './styles.module.scss'
 
-export function TasksInfo() {
+export function TasksInfo({createdTasks}: TasksInfo.Props) {
   return (
     <section className={styles.container}>
       <span className={styles.createdTasks}>
-        Created tasks<span>0</span>
+        Created tasks<span>{createdTasks}</span>
       </span>
 
       <span className={styles.completedTasks}>
@@ -13,4 +13,10 @@ export function TasksInfo() {
       </span>
     </section>
   )
+}
+
+namespace TasksInfo {
+  export interface Props {
+    createdTasks: number
+  }
 }

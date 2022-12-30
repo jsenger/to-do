@@ -29,7 +29,9 @@ function App() {
       <Header />
       <main className={styles.mainContainer}>
         <TaskCreationForm onAddNewTask={onAddNewTask} />
-        <TasksInfo />
+        <TasksInfo
+          createdTasks={tasks.length}
+        />
         {tasks.length === 0 ? (
           <EmptyTaskList />
         ) : tasks.map(task => (
