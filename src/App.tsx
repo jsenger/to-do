@@ -29,7 +29,10 @@ function App() {
   }
 
   function onCheckClick(taskId: string) {
-    setTasks(tasks.map(task => task.id === taskId ? {...task, isComplete: !task.isComplete} : task))
+    const updatedTasks = tasks.map(task => task.id === taskId ? {...task, isComplete: !task.isComplete} : task)
+    const reorderedTasks = updatedTasks.sort((previousTask, nextTask) => (previousTask.isComplete === nextTask.isComplete)? 0 : previousTask.isComplete? 1 : -1)
+
+    setTasks(reorderedTasks)
   }
 
   return (
