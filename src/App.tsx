@@ -13,11 +13,14 @@ function App() {
   const [tasks, setTasks] = useState([] as TaskInterface[])
 
   function onAddNewTask(newTask: string) {
-    setTasks([...tasks, {
-      id: uuidv4(),
-      isComplete: false,
-      description: newTask
-    }])
+    setTasks([
+      {
+        id: uuidv4(),
+        isComplete: false,
+        description: newTask
+      },
+      ...tasks
+    ])
   }
 
   function onDeleteTask(taskId: string) {
