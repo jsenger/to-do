@@ -4,6 +4,7 @@ import './global.scss'
 import { TaskCreationForm } from './components/TaskCreationForm'
 import { TasksInfo } from './components/TasksInfo'
 import { EmptyTaskList } from './components/EmptyTaskList'
+import { Task } from './components/Task'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <main className={styles.mainContainer}>
         <TaskCreationForm />
         <TasksInfo />
-        <EmptyTaskList />
+        <Task />
       </main>
     </>
   )
