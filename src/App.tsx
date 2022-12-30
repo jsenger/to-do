@@ -27,6 +27,10 @@ function App() {
     setTasks(tasks.filter(task => task.id !== taskId))
   }
 
+  function onCheckClick(taskId: string) {
+    setTasks(tasks.map(task => task.id === taskId ? {...task, isComplete: !task.isComplete} : task))
+  }
+
   return (
     <>
       <Header />
@@ -42,6 +46,7 @@ function App() {
             key={task.id} 
             task={task}
             onDeleteTask={onDeleteTask}
+            onCheckClick={onCheckClick}
           />
         ))}
       </main>
