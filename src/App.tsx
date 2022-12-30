@@ -5,15 +5,32 @@ import { TaskCreationForm } from './components/TaskCreationForm'
 import { TasksInfo } from './components/TasksInfo'
 import { EmptyTaskList } from './components/EmptyTaskList'
 import { Task } from './components/Task'
+import { useState } from 'react'
+import { TaskInterface } from './interfaces/task'
+import { v4 as uuidv4 } from 'uuid'
 
 function App() {
+  const [tasks, setTasks] = useState([] as TaskInterface[])
+
+  function onAddNewTask(newTask: string) {
+    setTasks([...tasks, {
+      id: uuidv4(),
+      isComplete: false,
+      description: newTask
+    }])
+  }
+
   return (
     <>
       <Header />
       <main className={styles.mainContainer}>
-        <TaskCreationForm />
+        <TaskCreationForm onAddNewTask={onAddNewTask} />
         <TasksInfo />
-        <Task />
+        {tasks.length === 0 ? (
+          <EmptyTaskList />
+        ) : tasks.map(task => (
+          <Task key={task.id} task={task} />
+        ))}
       </main>
     </>
   )
