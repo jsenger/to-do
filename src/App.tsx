@@ -5,13 +5,17 @@ import { TaskCreationForm } from './components/TaskCreationForm'
 import { TasksInfo } from './components/TasksInfo'
 import { EmptyTaskList } from './components/EmptyTaskList'
 import { Task } from './components/Task'
-import { useState } from 'react'
-import { TaskInterface } from './interfaces/task'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { getTasksState, postTasksState } from './services/tasksState'
 
 function App() {
-  const [tasks, setTasks] = useState([] as TaskInterface[])
+  const [tasks, setTasks] = useState(getTasksState())
   const completedTasks = tasks.filter(task => task.isComplete)
+
+  useEffect(() => {
+    postTasksState(tasks)
+  }, [tasks])
 
   function onAddNewTask(newTask: string) {
     setTasks([
