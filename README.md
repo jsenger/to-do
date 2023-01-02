@@ -3,7 +3,7 @@
  
  A to-do list app that saves created items to the browser. Built with React, Vite and TypeScript.
  
- You can preview it here: https://to-do-inky-theta.vercel.app/
+ You can preview it here: https://to-do-jsenger.vercel.app/
  
  ## Project setup
  
