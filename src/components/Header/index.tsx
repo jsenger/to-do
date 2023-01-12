@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png'
 export function Header() {
   return (
     <header className={styles.header}>
-      <img src={logo} alt="Logotipo do app" />
+      <img src={logo} alt="App logo" />
     </header>
   )
 }
