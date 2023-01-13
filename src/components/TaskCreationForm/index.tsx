@@ -11,8 +11,11 @@ export function TaskCreationForm({onAddNewTask}: TaskCreationForm.Props) {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    onAddNewTask(newTask)
-    setNewTask('')
+
+    if (newTask !== '') {
+      onAddNewTask(newTask)
+      setNewTask('')
+    }
   }
 
   return (
