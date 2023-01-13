@@ -15,7 +15,10 @@ export function Task({task, onDeleteTask, onCheckClick}: Task.Props) {
 
   return (
     <div className={`${styles.container} ${task.isComplete && styles.completed}`}>
-      <img src={task.isComplete ? checked : unchecked} alt="Unchecked item icon" onClick={handleCheckClick} />
+      <img
+        src={task.isComplete ? checked : unchecked}
+        alt={`${task.isComplete ? 'Checked' : 'Unchecked'} item icon`}onClick={handleCheckClick}
+      />
       <p>{task.description}</p>
       <button title="Delete task" onClick={handleDeleteTask}>
         <Trash />
